@@ -40,6 +40,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
+builder.Services.AddScoped<JobRepository>();
+builder.Services.AddScoped<JobService>();
 
 var app = builder.Build();
 
