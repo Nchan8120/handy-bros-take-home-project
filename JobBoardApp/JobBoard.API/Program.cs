@@ -42,6 +42,8 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 builder.Services.AddScoped<JobRepository>();
 builder.Services.AddScoped<JobService>();
+builder.Services.AddScoped<InterestRepository>();
+builder.Services.AddScoped<InterestService>();
 
 var app = builder.Build();
 
