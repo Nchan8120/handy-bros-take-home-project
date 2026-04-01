@@ -25,6 +25,7 @@ namespace JobBoard.API.Services
                 Body = j.Body,
                 PostedDate = j.PostedDate,
                 PostedBy = j.PostedBy.Username,
+                PostedById = j.PostedById,
                 InterestCount = j.Interests.Count
             });
 
@@ -50,6 +51,7 @@ namespace JobBoard.API.Services
                 Body = job.Body,
                 PostedDate = job.PostedDate,
                 PostedBy = job.PostedBy.Username,
+                PostedById = job.PostedById,
                 InterestCount = job.Interests.Count
             };
         }
@@ -71,7 +73,8 @@ namespace JobBoard.API.Services
                 Summary = job.Summary,
                 Body = job.Body,
                 PostedDate = job.PostedDate,
-                PostedBy = string.Empty
+                PostedBy = string.Empty,
+                PostedById = job.PostedById,
             };
         }
 
@@ -95,6 +98,7 @@ namespace JobBoard.API.Services
                 Body = job.Body,
                 PostedDate = job.PostedDate,
                 PostedBy = job.PostedBy.Username,
+                PostedById = job.PostedById,
                 InterestCount = job.Interests.Count
             };
         }

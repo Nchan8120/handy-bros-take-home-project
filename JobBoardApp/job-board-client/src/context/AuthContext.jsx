@@ -7,6 +7,7 @@ export function AuthProvider({ children }) {
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('username');
     const role = localStorage.getItem('role');
+    const id = localStorage.getItem('id');
     return token ? { token, username, role } : null;
   });
 
@@ -14,6 +15,7 @@ export function AuthProvider({ children }) {
     localStorage.setItem('token', data.token);
     localStorage.setItem('username', data.username);
     localStorage.setItem('role', data.role);
+    localStorage.setItem('id', data.id);  
     setUser(data);
   };
 
@@ -21,6 +23,7 @@ export function AuthProvider({ children }) {
     localStorage.removeItem('token');
     localStorage.removeItem('username');
     localStorage.removeItem('role');
+    localStorage.removeItem('id');
     setUser(null);
   };
 

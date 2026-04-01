@@ -33,6 +33,7 @@ namespace JobBoard.API.Services
 
             return new AuthResponseDto
             {
+                Id = user.Id, 
                 Token = token,
                 Username = user.Username,
                 Role = user.Role
@@ -51,6 +52,7 @@ namespace JobBoard.API.Services
 
             return new AuthResponseDto
             {
+                Id = user.Id, 
                 Token = token,
                 Username = user.Username,
                 Role = user.Role
