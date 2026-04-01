@@ -114,22 +114,26 @@ export default function JobDetailPage() {
       </div>
 
       {/* Interested users list — only visible to the poster */}
-      {user?.role === 'Poster' && interestedUsers.length > 0 && (
+      {user?.role === 'Poster' && job.postedById === Number(user.id) && (
         <div className="card">
           <h3 style={{ marginBottom: '1rem' }}>Interested users</h3>
-          {interestedUsers.map(u => (
-            <div key={u.id} style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              padding: '0.5rem 0',
-              borderBottom: '1px solid #f0f0f0'
-            }}>
-              <span>{u.username}</span>
-              <span style={{ fontSize: '0.85rem', color: '#888' }}>
-                {new Date(u.expressedAt).toLocaleDateString()}
-              </span>
-            </div>
-          ))}
+          {interestedUsers.length === 0 ? (
+            <p style={{ color: '#888', fontSize: '0.9rem' }}>No one has expressed interest yet.</p>
+          ) : (
+            interestedUsers.map(u => (
+              <div key={u.id} style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                padding: '0.5rem 0',
+                borderBottom: '1px solid #f0f0f0'
+              }}>
+                <span>{u.username}</span>
+                <span style={{ fontSize: '0.85rem', color: '#888' }}>
+                  {new Date(u.expressedAt).toLocaleDateString()}
+                </span>
+              </div>
+            ))
+          )}
         </div>
       )}
     </div>
